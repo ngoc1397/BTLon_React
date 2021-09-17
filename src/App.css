@@ -1,38 +1,486 @@
-.App {
-  text-align: center;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.navbar {
+    width: 200px;
+    height: 100vh;
+    background-color: rgb(1, 43, 56);
 }
 
-.App-link {
-  color: #61dafb;
+.navbar-logo {
+    text-align: center;
+    font-style: italic;
+    position: relative;
+    height: 60px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar-logo h1 {
+    position: absolute;
+    background-color: white;
+    border-radius: 12px;
+    padding: 5px 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.navbar-logo-first {
+    color: rgb(255, 208, 0);
+}
+
+.navbar-logo-second {
+    color: rgb(255, 208, 0);
+}
+
+.content {
+    flex: 1;
+    height: 100vh;
+}
+
+.content-header {
+    background-color: rgb(247, 250, 252);
+    height: 60px;
+    display: flex;
+    padding: 0px 15px;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.11);
+}
+
+.user {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.user-icon {
+    width: 30px;
+    height: 30px;
+    color: rgb(29, 29, 29);
+}
+
+.user-icon ion-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.navbar-menu {
+    width: 100%;
+}
+
+.navbar-menu li {
+    padding: 15px 15px;
+    margin: 0px 10px 0px 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+.navbar-menu li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    color: white;
+}
+
+.navbar-menu li a ion-icon {
+    margin-right: 5px;
+}
+
+.menu-button {
+    color: black;
+    width: 30px;
+    height: 30px;
+}
+
+.menu-button ion-icon {
+    width: 100%;
+    height: 100%;
+}
+
+.content-body {
+    width: 100%;
+    height: calc(100vh - 60px);
+    max-height: calc(100vh - 70px);
+}
+
+
+/* css tính lương nv */
+
+.tinhluong-content {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.tinhluong-left {
+    width: 550px;
+    max-height: 100%;
+    overflow-y: scroll;
+}
+
+.dsnhanvien-title {
+    font-size: 1.5rem;
+    color: crimson;
+    height: 40px;
+}
+
+.tinhluong-left table {
+    font-size: 0.85rem;
+}
+
+.tinhluong-left table,
+tr,
+td {
+    border: none;
+    border-collapse: collapse;
+}
+
+.tinhluong-left table tbody tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.tinhluong-left table tr td {
+    padding: 10px 10px;
+}
+
+.tinhluong-left table tbody tr:hover {
+    background-color: rgb(201, 143, 255);
+    cursor: pointer;
+}
+
+.tinhluong-left table thead {
+    font-weight: 500;
+    background-color: aqua;
+}
+
+.tinhluong-middle {
+    flex: 1;
+}
+
+.tinhluong-middle-top {
+    width: 100%;
+    height: 50%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.tinhluong-middle-top table {
+    margin-top: 10px;
+    width: 100%;
+    border: none;
+    font-size: 0.85rem;
+    border-collapse: collapse;
+}
+
+.tinhluong-middle-top table td {
+    padding: 10px 5px;
+}
+
+.tinhluong-middle-top table tbody tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.tinhluong-middle-top table thead {
+    background-color: aquamarine;
+}
+
+.tinhluong-middle-bottom {
+    margin-top: 5px;
+    width: 100%;
+    height: 50%;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+.tinhluong-middle-bottom table {
+    width: 100%;
+    border: none;
+    font-size: 0.85rem;
+    border-collapse: collapse;
+}
+
+.tinhluong-middle-bottom table td {
+    padding: 10px 5px;
+}
+
+.tinhluong-middle-bottom table tbody tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.tinhluong-middle-bottom table thead {
+    background-color: aquamarine;
+}
+
+.tinhluong-middle-top-filter {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 2px 2px;
+    align-items: center;
+    height: 30px;
+    background-color: white;
+}
+
+.tinhluong-middle-top-title {
+    width: 100%;
+    height: 40px;
+    padding: 0px 10px;
+    font-size: 1.5rem;
+    color: crimson;
+}
+
+.tinhluong-middle-top-filter select {
+    display: inline-block;
+    width: 25%;
+    height: 100%;
+    margin: 0px 5px;
+}
+
+.tinhluong-middle-top-filter button {
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    background-color: rgb(255, 209, 2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.11);
+    margin: 0px 5px;
+}
+
+.btn {
+    padding: 8px 15px;
+    background-color: rgb(255, 209, 2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.11);
+    margin: 0px 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.btn.primary {
+    background-color: rgb(0, 119, 255);
+    color: white;
+}
+
+.btn.secondary {
+    background-color: crimson;
+    color: white;
+}
+
+.tinhluong-middle-top-filter button:hover {
+    cursor: pointer;
+    opacity: 0.8;
+}
+
+.tinhluong-middle-bottom-title {
+    height: 40px;
+    font-size: 1.5rem;
+    color: crimson;
+    padding: 0px 10px;
+}
+
+
+/* css cho phần tính luong */
+
+.tinhluong-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.tinhluong-right-nhanvien {
+    width: 100%;
+    height: 280px;
+    padding: 0px 10px;
+    display: flex;
+    gap: 5px;
+    flex-direction: column;
+}
+
+.text-group {
+    font-size: 0.9rem;
+    width: 100%;
+    height: 30px;
+    align-items: center;
+    display: flex;
+}
+
+.text-group.right-align {
+    justify-content: flex-end;
+    gap: 5px;
+}
+
+.text-group .text-label {
+    width: 110px;
+    line-height: 30px;
+    height: 100%;
+}
+
+.text-group .text {
+    flex: 1;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    line-height: 30px;
+    background: #f1f1f1;
+    padding-left: 10px;
+    height: 100%;
+}
+
+
+/* ---- */
+
+.title {
+    font-size: 1.2rem;
+    color: rgb(59, 59, 255);
+}
+
+.title.large {
+    font-size: 1.5rem;
+    color: rgb(59, 59, 255);
+}
+
+.tinhluong-right-chamcong {
+    padding: 0px 10px;
+    width: 100%;
+    height: 80px;
+}
+
+.tinhluong-right-chamcong input {
+    padding: 8px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    background: #f1f1f1;
+}
+
+.tinhluong-right-chamcong .text-group {
+    margin-top: 10px;
+}
+
+.tinhluong-right-chamcong button {
+    padding: 8px 10px;
+    background-color: rgb(255, 209, 2);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.15), 0 6px 20px 0 rgba(0, 0, 0, 0.11);
+    margin: 0px 5px;
+    border: none;
+    border-radius: 5px;
+}
+
+.tinhluong-right-chamcong button:hover {
+    cursor: pointer;
+}
+
+.tinhluong-right-luong {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 0px 10px;
+}
+
+.tinhluong-right-ghichu {
+    width: 100%;
+    flex: 1;
+    padding: 0px 10px 10px 10px;
+    display: flex;
+}
+
+.tinhluong-right-ghichu .label {
+    width: 110px;
+    height: 100%;
+}
+
+.tinhluong-right-ghichu .text {
+    flex: 1;
+    height: 100%;
+    background-color: #f1f1f1;
+    border: none;
+    outline: none;
+    border-radius: 5px;
+}
+
+.tinhluong-right-ghichu .text:focus {
+    border: 2px solid rgba(3, 247, 255, 0.6);
+}
+
+
+/* css cho cấp tài khoản nhân viên */
+
+.taikhoan-content {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.taikhoan-left {
+    flex: 1;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 10px;
+    overflow-y: scroll;
+}
+
+.taikhoan-left table {
+    margin-top: 5px;
+    width: 100%;
+    border: none;
+    border-collapse: collapse;
+}
+
+.taikhoan-left table td {
+    padding: 10px;
+}
+
+.taikhoan-left table thead tr {
+    background-color: rgb(0, 162, 255);
+    font-weight: 500;
+    color: white;
+}
+
+.taikhoan-left table tbody tr {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.taikhoan-left table tbody tr:hover {
+    background-color: aquamarine;
+    cursor: pointer;
+}
+
+.taikhoan-right {
+    padding: 10px;
+    width: 400px;
+    gap: 10px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
